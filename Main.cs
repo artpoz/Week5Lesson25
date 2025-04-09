@@ -20,6 +20,8 @@ namespace Week5Lesson25
         private FileHelper<List<Student>> _fileHelper = 
             new FileHelper<List<Student>>(Program.FilePath);
 
+        private List<Group> _groups;
+
         public bool IsMaximize
         {
             get
@@ -43,11 +45,33 @@ namespace Week5Lesson25
             }
 
             HideColumns();
+
+            _groups = new List<Group>();
+            _groups.Add(new Group { Id = 0, Name = "Wszystkie" });
+            _groups.Add(new Group { Id = 1, Name = "A1" });
+            _groups.Add(new Group { Id = 2, Name = "A2" });
+            _groups.Add(new Group { Id = 3, Name = "A3" });
+
+            cbFilter.DataSource = _groups;
+            cbFilter.DisplayMember = "Name";
+            cbFilter.ValueMember = "Id";
+
+            
         }
 
         private void RefreshDiary()
         {
             var students = _fileHelper.DeserializeFromFile();
+
+            /*
+            var selectedGroupId = (cbFilter.SelectedItem as Group).Id;
+
+            if (selectedGroupId != 0)
+            {
+                students = students.Where(x => x.GroupId == selectedGroupId).ToList();
+            }
+            */
+
             dgvDiary.DataSource = students;
         }
 
@@ -63,6 +87,7 @@ namespace Week5Lesson25
             dgvDiary.Columns[7].HeaderText = "Język polski";
             dgvDiary.Columns[8].HeaderText = "Język obcy";
             dgvDiary.Columns[9].HeaderText = "Zajęcia dodatkowe";
+            dgvDiary.Columns[10].HeaderText = "Grupa";
         }
 
         private void HideColumns()
