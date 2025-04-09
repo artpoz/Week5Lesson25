@@ -12,6 +12,7 @@ namespace Week5Lesson25
 
         private int _studentId;
         private Student _student;
+        private List<Group> _groups;
 
         private FileHelper<List<Student>> _fileHelper =
             new FileHelper<List<Student>>(Program.FilePath);
@@ -21,9 +22,20 @@ namespace Week5Lesson25
             InitializeComponent();
             _studentId = id;
 
+            _groups = new List<Group>();
+            _groups.Add(new Group { Id = 0, Name = "None" });
+            _groups.Add(new Group { Id = 1, Name = "A1" });
+            _groups.Add(new Group { Id = 2, Name = "A2" });
+            _groups.Add(new Group { Id = 3, Name = "A3" });
+
+            cbGroupId.DataSource = _groups;
+            cbGroupId.DisplayMember = "Name";
+            cbGroupId.ValueMember = "Id";
+
             GetStudentData();          
-            tbName.Select();
-        }
+
+            tbName.Select();                        
+        }        
 
         private void GetStudentData()
         {
@@ -52,6 +64,8 @@ namespace Week5Lesson25
             rtbComments.Text = _student.Comments;
             tbPolish.Text = _student.PolishLang;
             tbForeign.Text = _student.ForeignLang;
+            cbExtra.Checked = _student.Extra;
+            cbGroupId.SelectedItem = _groups.FirstOrDefault(x => x.Id == _student.GroupId);
         }
         
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -83,6 +97,8 @@ namespace Week5Lesson25
                 Physics = tbPhysics.Text,
                 PolishLang = tbPolish.Text,
                 Technology = tbTechnology.Text,
+                Extra = cbExtra.Checked,
+                GroupId = (cbGroupId.SelectedItem as Group).Id,
             };
 
             students.Add(student);

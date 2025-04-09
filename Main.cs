@@ -41,6 +41,8 @@ namespace Week5Lesson25
             {
                 WindowState = FormWindowState.Maximized;
             }
+
+            HideColumns();
         }
 
         private void RefreshDiary()
@@ -60,6 +62,13 @@ namespace Week5Lesson25
             dgvDiary.Columns[6].HeaderText = "Fizyka";
             dgvDiary.Columns[7].HeaderText = "Język polski";
             dgvDiary.Columns[8].HeaderText = "Język obcy";
+            dgvDiary.Columns[9].HeaderText = "Zajęcia dodatkowe";
+        }
+
+        private void HideColumns()
+        {
+            dgvDiary.Columns[0].Visible = false;
+            dgvDiary.Columns[10].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

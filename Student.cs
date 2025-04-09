@@ -18,5 +18,8 @@ namespace Week5Lesson25
         public string PolishLang { get; set; }
         public string ForeignLang { get; set; }
 
+        public bool Extra { get; set; }
+        public int GroupId { get; set; }
+
     }
 }

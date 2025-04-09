@@ -48,6 +48,9 @@
             this.lbComments = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cbExtra = new System.Windows.Forms.CheckBox();
+            this.cbGroupId = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbId
@@ -134,7 +137,7 @@
             // 
             this.rtbComments.Location = new System.Drawing.Point(149, 357);
             this.rtbComments.Name = "rtbComments";
-            this.rtbComments.Size = new System.Drawing.Size(218, 106);
+            this.rtbComments.Size = new System.Drawing.Size(218, 63);
             this.rtbComments.TabIndex = 9;
             this.rtbComments.Text = "";
             // 
@@ -198,7 +201,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(24, 496);
+            this.btnConfirm.Location = new System.Drawing.Point(24, 539);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(91, 23);
             this.btnConfirm.TabIndex = 18;
@@ -208,7 +211,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(285, 496);
+            this.btnCancel.Location = new System.Drawing.Point(285, 539);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 23);
             this.btnCancel.TabIndex = 19;
@@ -216,11 +219,41 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cbExtra
+            // 
+            this.cbExtra.AutoSize = true;
+            this.cbExtra.Location = new System.Drawing.Point(149, 448);
+            this.cbExtra.Name = "cbExtra";
+            this.cbExtra.Size = new System.Drawing.Size(144, 20);
+            this.cbExtra.TabIndex = 20;
+            this.cbExtra.Text = "Zajęcia dodatkowe";
+            this.cbExtra.UseVisualStyleBackColor = true;
+            // 
+            // cbGroupId
+            // 
+            this.cbGroupId.FormattingEnabled = true;
+            this.cbGroupId.Location = new System.Drawing.Point(149, 490);
+            this.cbGroupId.Name = "cbGroupId";
+            this.cbGroupId.Size = new System.Drawing.Size(121, 24);
+            this.cbGroupId.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(44, 490);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 16);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Grupa";
+            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 554);
+            this.ClientSize = new System.Drawing.Size(425, 574);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cbGroupId);
+            this.Controls.Add(this.cbExtra);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lbComments);
@@ -241,8 +274,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbId);
-            this.MaximumSize = new System.Drawing.Size(443, 601);
-            this.MinimumSize = new System.Drawing.Size(443, 601);
+            this.MaximumSize = new System.Drawing.Size(443, 621);
+            this.MinimumSize = new System.Drawing.Size(443, 621);
             this.Name = "AddEditStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodawanie ucznia";
@@ -273,5 +306,8 @@
         private System.Windows.Forms.Label lbComments;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox cbExtra;
+        private System.Windows.Forms.ComboBox cbGroupId;
+        private System.Windows.Forms.Label label9;
     }
 }
