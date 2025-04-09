@@ -91,7 +91,7 @@ namespace Week5Lesson25
         private void HideColumns()
         {
             dgvDiary.Columns[0].Visible = false;
-            //dgvDiary.Columns[10].Visible = false;
+            dgvDiary.Columns[10].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -122,9 +122,9 @@ namespace Week5Lesson25
 
             var selectedStudent = dgvDiary.SelectedRows[0];
 
-            var confirmDelete = MessageBox.Show($"Czy na pewno chcesz usunąć ucznia",
-               // {(selectedStudent.Cells[1].Value.ToString() + " " +
-               // selectedStudent.Cells[2].Value.ToString()).Trim()}",
+            var confirmDelete = MessageBox.Show($"Czy na pewno chcesz usunąć ucznia " +
+                $"{selectedStudent.Cells[1].Value.ToString()} " +
+                $"{selectedStudent.Cells[2].Value.ToString()}",
                 "Usuwanie ucznia",
                 MessageBoxButtons.OKCancel);
 
