@@ -100,6 +100,7 @@
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(218, 24);
             this.cbFilter.TabIndex = 5;
+            this.cbFilter.SelectedValueChanged += new System.EventHandler(this.cbFilter_SelectedValueChanged);
             // 
             // Main
             // 
