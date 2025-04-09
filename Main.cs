@@ -36,16 +36,7 @@ namespace Week5Lesson25
         public Main()
         {
             InitializeComponent();
-            RefreshDiary();
-            SetColumnHeader();
-
-            if (IsMaximize)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-
-            HideColumns();
-
+                       
             _groups = new List<Group>();
             _groups.Add(new Group { Id = 0, Name = "Wszystkie" });
             _groups.Add(new Group { Id = 1, Name = "A1" });
@@ -56,21 +47,28 @@ namespace Week5Lesson25
             cbFilter.DisplayMember = "Name";
             cbFilter.ValueMember = "Id";
 
-            
+            RefreshDiary();
+
+            SetColumnHeader();
+
+            if (IsMaximize)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+
+            HideColumns();
         }
 
         private void RefreshDiary()
         {
             var students = _fileHelper.DeserializeFromFile();
-
-            /*
+            
             var selectedGroupId = (cbFilter.SelectedItem as Group).Id;
 
             if (selectedGroupId != 0)
             {
                 students = students.Where(x => x.GroupId == selectedGroupId).ToList();
-            }
-            */
+            }            
 
             dgvDiary.DataSource = students;
         }
@@ -93,7 +91,7 @@ namespace Week5Lesson25
         private void HideColumns()
         {
             dgvDiary.Columns[0].Visible = false;
-            dgvDiary.Columns[10].Visible = false;
+            //dgvDiary.Columns[10].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -147,8 +145,7 @@ namespace Week5Lesson25
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            var students = _fileHelper.DeserializeFromFile();
-            dgvDiary.DataSource = students;
+            RefreshDiary();
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
