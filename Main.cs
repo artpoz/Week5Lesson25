@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using Week5Lesson25.Properties;
 
 namespace Week5Lesson25
@@ -36,12 +30,8 @@ namespace Week5Lesson25
         public Main()
         {
             InitializeComponent();
-                       
-            _groups = new List<Group>();
-            _groups.Add(new Group { Id = 0, Name = "Wszystkie" });
-            _groups.Add(new Group { Id = 1, Name = "A1" });
-            _groups.Add(new Group { Id = 2, Name = "A2" });
-            _groups.Add(new Group { Id = 3, Name = "A3" });
+
+            _groups = GroupsHelper.GetGroups("Wszystkie");
 
             cbFilter.DataSource = _groups;
             cbFilter.DisplayMember = "Name";

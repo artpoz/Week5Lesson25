@@ -22,11 +22,7 @@ namespace Week5Lesson25
             InitializeComponent();
             _studentId = id;
 
-            _groups = new List<Group>();
-            _groups.Add(new Group { Id = 0, Name = "None" });
-            _groups.Add(new Group { Id = 1, Name = "A1" });
-            _groups.Add(new Group { Id = 2, Name = "A2" });
-            _groups.Add(new Group { Id = 3, Name = "A3" });
+            _groups = GroupsHelper.GetGroups("None");
 
             cbGroupId.DataSource = _groups;
             cbGroupId.DisplayMember = "Name";
