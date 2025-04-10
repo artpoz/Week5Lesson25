@@ -65,23 +65,23 @@ namespace Week5Lesson25
 
         private void SetColumnHeader()
         {
-            dgvDiary.Columns[0].HeaderText = "Numer";
-            dgvDiary.Columns[1].HeaderText = "Imię";
-            dgvDiary.Columns[2].HeaderText = "Nazwisko";
-            dgvDiary.Columns[3].HeaderText = "Uwagi";
-            dgvDiary.Columns[4].HeaderText = "Matematyka";
-            dgvDiary.Columns[5].HeaderText = "Technologia";
-            dgvDiary.Columns[6].HeaderText = "Fizyka";
-            dgvDiary.Columns[7].HeaderText = "Język polski";
-            dgvDiary.Columns[8].HeaderText = "Język obcy";
-            dgvDiary.Columns[9].HeaderText = "Zajęcia dodatkowe";
-            dgvDiary.Columns[10].HeaderText = "Grupa";
+            //dgvDiary.Columns[nameof(Student.Id)].HeaderText = "Numer";
+            dgvDiary.Columns[nameof(Student.FirstName)].HeaderText = "Imię";
+            dgvDiary.Columns[nameof(Student.LastName)].HeaderText = "Nazwisko";
+            dgvDiary.Columns[nameof(Student.Comments)].HeaderText = "Uwagi";
+            dgvDiary.Columns[nameof(Student.Math)].HeaderText = "Matematyka";
+            dgvDiary.Columns[nameof(Student.Technology)].HeaderText = "Technologia";
+            dgvDiary.Columns[nameof(Student.Physics)].HeaderText = "Fizyka";
+            dgvDiary.Columns[nameof(Student.PolishLang)].HeaderText = "Język polski";
+            dgvDiary.Columns[nameof(Student.ForeignLang)].HeaderText = "Język obcy";
+            dgvDiary.Columns[nameof(Student.Extra)].HeaderText = "Zajęcia dodatkowe";
+            //dgvDiary.Columns[10].HeaderText = "Grupa";
         }
 
         private void HideColumns()
         {
-            dgvDiary.Columns[0].Visible = false;
-            dgvDiary.Columns[10].Visible = false;
+            dgvDiary.Columns[nameof(Student.Id)].Visible = false;
+            dgvDiary.Columns[nameof(Student.GroupId)].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
